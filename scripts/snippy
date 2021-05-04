@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# based on the original script from 
+# https://github.com/CalinLeafshade/dots/blob/master/bin/bin/snippy.sh
+
+
+SNIPS=${HOME}/.config/snippy
+
+FILE=$(find "${SNIPS}" -type f -printf "%f\n" | /usr/bin/rofi -dmenu)
+
+if [ -f "${SNIPS}/${FILE}" ]; then
+    DATA=$([ -x "${SNIPS}/${FILE}" ] && bash "${SNIPS}/${FILE}" || head --bytes=-1 "${SNIPS}/${FILE}")
+    printf  "%s" "$DATA" | xsel -p -i 
+    printf  "%s" "$DATA" | xsel -b -i 
+    xdotool key shift+Insert
+fi
