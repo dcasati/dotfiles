@@ -210,5 +210,8 @@ for_window [window_type="menu"] floating enable
 
 #fake-outputs 1920x1170+0+0,1920x1170+1920+0
 #
+
+# https://github.com/altdesktop/i3ipc-python
+# TL;DR - pip3 install i3ipc
 bindsym $mod+q exec "python3 ~/.config/scripts/renameworkspace.py"
 
