@@ -12,7 +12,7 @@ import re
 
 class WorkspaceRenamer(object):
     
-    prefixRegex = re.compile('\d+.*')
+    prefixRegex = re.compile('\d+')
 
     def __init__(self):
         self.i3 = i3ipc.Connection()
