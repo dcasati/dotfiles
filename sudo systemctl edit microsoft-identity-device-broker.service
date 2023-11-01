@@ -1,0 +1,8 @@
+# sudo systemctl edit microsoft-identity-device-broker.service
+
+[Service]
+Environment="MICROSOFT_IDENTITY_DEVICE_BROKER_OPTS=-XX:+CrashOnOutOfMemoryError"
+MemoryMax=1G
+
+# to take effect right away:
+# sudo systemctl restart microsoft-identity-device-broker.service
